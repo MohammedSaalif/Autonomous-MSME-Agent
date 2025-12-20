@@ -39,7 +39,7 @@ class InventoryAgent:
         
         # Calculate recent sales velocity (last 7 days)
         sales_col = f"{product_id}_sales"
-        total_sales_7d = self.df_sales[sales_col].sum()
+        total_sales_7d = self.df_sales[sales_col].head(7).sum()
         
         # Logic: Overstock vs Low Stock
         status = "NORMAL"

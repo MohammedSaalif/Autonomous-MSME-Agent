@@ -1,5 +1,51 @@
-product_id,product_name,cost_price,selling_price,current_stock,min_stock_threshold
-P001,High-End Laptop,800,1200,5,10
-P002,Basic Mouse,5,15,600,50
-P003,Noise-Cancel Headphones,50,110,45,20
-P004,Mech Keyboard,40,80,120,30
+product_id,product_name,cost_price,selling_price,current_stock,min_stock_threshold,vendor_email
+P001,Ergo Webcam 289,207,370,3,29,vendor.xyz.8@example.com
+P002,Ergo Tablet 541,426,655,106,6,vendor.abc.96@example.com
+P003,HD Laptop 456,201,253,17,8,vendor.global.65@example.com
+P004,Gaming Laptop 520,459,869,182,21,vendor.global.43@example.com
+P005,Pro Mouse 117,112,157,10,9,vendor.global.53@example.com
+P006,Smart Keyboard 472,207,408,74,30,vendor.abc.84@example.com
+P007,Mechanical Headphones 329,470,622,188,24,vendor.global.92@example.com
+P008,Office Laptop 883,226,440,12,24,vendor.supply.69@example.com
+P009,Smart Speaker 368,156,271,52,7,vendor.tech.61@example.com
+P010,Old Gen Gaming Tablet 352,152,215,137,19,vendor.abc.4@example.com
+P011,Ultra Keyboard 386,27,33,5,9,vendor.global.82@example.com
+P012,HD Tablet 355,457,565,34,15,vendor.global.1@example.com
+P013,Wireless Monitor 667,210,366,196,18,vendor.global.2@example.com
+P014,Smart Keyboard 472,252,435,58,18,vendor.xyz.37@example.com
+P015,Ergo Charger 333,282,421,86,20,vendor.global.75@example.com
+P016,Pro Webcam 871,103,124,93,25,vendor.global.86@example.com
+P017,Slim Webcam 771,83,117,127,15,vendor.global.98@example.com
+P018,Slim Tablet 800,89,131,37,24,vendor.supply.48@example.com
+P019,Ergo Tablet 698,43,70,36,28,vendor.supply.69@example.com
+P020,Old Gen HD Laptop 601,217,278,275,17,vendor.global.26@example.com
+P021,Gaming Mouse 226,202,339,4,26,vendor.tech.1@example.com
+P022,Ergo Phone 697,448,617,20,9,vendor.supply.58@example.com
+P023,Ergo Webcam 681,114,153,21,29,vendor.abc.40@example.com
+P024,Ergo Charger 728,17,29,26,27,vendor.tech.66@example.com
+P025,Wireless Laptop 691,106,175,35,6,vendor.abc.94@example.com
+P026,Gaming Laptop 479,125,153,90,26,vendor.xyz.6@example.com
+P027,Gaming Monitor 427,225,307,38,12,vendor.tech.9@example.com
+P028,Ergo Tablet 660,190,245,179,5,vendor.xyz.41@example.com
+P029,HD Monitor 762,453,606,158,20,vendor.abc.18@example.com
+P030,Old Gen Wireless Charger 725,122,203,217,8,vendor.tech.41@example.com
+P031,Mechanical Speaker 885,287,528,5,25,vendor.tech.83@example.com
+P032,Slim Laptop 510,11,17,127,22,vendor.abc.12@example.com
+P033,Pro Mouse 533,179,216,27,29,vendor.xyz.84@example.com
+P034,Slim Monitor 105,331,584,176,22,vendor.xyz.55@example.com
+P035,Mechanical Mouse 623,182,308,160,24,vendor.xyz.31@example.com
+P036,Smart Keyboard 474,380,637,180,6,vendor.supply.6@example.com
+P037,Wireless Monitor 556,118,209,77,7,vendor.xyz.66@example.com
+P038,HD Phone 749,38,70,156,7,vendor.xyz.8@example.com
+P039,Ergo Charger 592,293,494,56,12,vendor.abc.20@example.com
+P040,Old Gen Ultra Keyboard 125,498,833,246,23,vendor.supply.74@example.com
+P041,Ultra Speaker 854,382,760,2,6,vendor.xyz.16@example.com
+P042,Mechanical Phone 326,251,369,76,14,vendor.supply.73@example.com
+P043,Office Charger 702,361,436,64,5,vendor.abc.94@example.com
+P044,Office Headphones 313,336,477,143,7,vendor.global.27@example.com
+P045,Mechanical Monitor 722,44,69,121,10,vendor.abc.12@example.com
+P046,Mechanical Webcam 290,183,357,135,26,vendor.global.66@example.com
+P047,Pro Keyboard 818,248,491,114,18,vendor.tech.66@example.com
+P048,Smart Headphones 244,276,443,135,30,vendor.tech.14@example.com
+P049,Ergo Charger 723,142,185,28,7,vendor.xyz.3@example.com
+P050,Old Gen HD Headphones 489,258,388,219,11,vendor.xyz.19@example.com
