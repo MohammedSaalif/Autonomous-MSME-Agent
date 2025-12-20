@@ -1,0 +1,5 @@
+product_id,competitor_price,competitor_promo
+P001,1150,True
+P002,10,True
+P003,120,False
+P004,75,False

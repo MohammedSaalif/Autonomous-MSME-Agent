@@ -1,0 +1,5 @@
+product_id,product_name,cost_price,selling_price,current_stock,min_stock_threshold
+P001,High-End Laptop,800,1200,5,10
+P002,Basic Mouse,5,15,600,50
+P003,Noise-Cancel Headphones,50,110,45,20
+P004,Mech Keyboard,40,80,120,30
