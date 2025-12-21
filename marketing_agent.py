@@ -3,7 +3,7 @@ import os
 from agents import FinanceAgent, InventoryAgent, CompetitorAgent, AuditAgent
 
 # ⚠️ PASTE YOUR KEY HERE
-API_KEY = "AIzaSyDXsoegVTHJhX_FgTL61IDFabNiW73FRis" 
+API_KEY = "#" 
 genai.configure(api_key=API_KEY)
 
 class MarketingAgent:
