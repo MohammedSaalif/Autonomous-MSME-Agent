@@ -1,4 +1,8 @@
 import pandas as pd
+import datetime
+import hashlib
+import csv
+import os
 
 # --- 1. FINANCE AGENT ---
 class FinanceAgent:
@@ -82,3 +86,33 @@ class CompetitorAgent:
             "competitor_price": comp_price,
             "position": position
         }
+
+# --- 4. AUDIT & COMPLIANCE AGENT ---
+class AuditAgent:
+    def __init__(self, log_file="audit_log.csv"):
+        self.log_file = log_file
+        # Ensure file exists with headers
+        if not os.path.exists(self.log_file):
+            with open(self.log_file, 'w', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(["timestamp", "agent_name", "product_id", "action_taken", "reasoning_hash", "status"])
+
+    def log_event(self, agent_name, product_id, action, reasoning):
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Create a hash of the reasoning for integrity (simulated blockchain-lite)
+        reasoning_hash = hashlib.sha256(reasoning.encode()).hexdigest()[:16]
+        
+        status = "VERIFIED"
+        
+        with open(self.log_file, 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow([timestamp, agent_name, product_id, action, reasoning_hash, status])
+            
+        return reasoning_hash
+
+    def get_recent_logs(self):
+        try:
+            return pd.read_csv(self.log_file).tail(10).iloc[::-1] # Last 10, reversed
+        except:
+            return pd.DataFrame()

@@ -1,9 +1,9 @@
 import google.generativeai as genai
 import os
-from agents import FinanceAgent, InventoryAgent, CompetitorAgent
+from agents import FinanceAgent, InventoryAgent, CompetitorAgent, AuditAgent
 
 # ⚠️ PASTE YOUR KEY HERE
-API_KEY = "AIzaSyB5PHCdyqMCzx7VjdcQ9kcRTouxq_wfb64" 
+API_KEY = "AIzaSyDXsoegVTHJhX_FgTL61IDFabNiW73FRis" 
 genai.configure(api_key=API_KEY)
 
 class MarketingAgent:
@@ -11,6 +11,7 @@ class MarketingAgent:
         self.finance = FinanceAgent()
         self.inventory = InventoryAgent()
         self.competitor = CompetitorAgent()
+        self.audit = AuditAgent()
         # ✅ Using the model you confirmed works
         self.model = genai.GenerativeModel('gemini-2.5-flash') 
 
@@ -54,7 +55,17 @@ class MarketingAgent:
         # 3. GET AI DECISION
         try:
             response = self.model.generate_content(prompt)
-            return response.text
+            decision_text = response.text
+            
+            # 4. 📜 AUDIT LOGGING
+            self.audit.log_event(
+                agent_name="MarketingAgent",
+                product_id=product_id,
+                action="Strategy Generation",
+                reasoning=decision_text
+            )
+            
+            return decision_text
         except Exception as e:
             return f"Error connecting to AI: {e}"
 

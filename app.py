@@ -104,16 +104,24 @@ with col3:
     # Dynamic Market Metrics
     # Calculate avg price difference %
     diffs = []
+    losing_items = []
+    winning_items = []
+    
     for pid in agent.inventory.df_inv['product_id']:
         comp_data = agent.competitor.compare_price(pid)
-        # We need raw numbers, but compare_price returns text strings in 'position'
-        # Let's verify what compare_price returns. 
-        # It returns 'my_price' and 'competitor_price'.
         my = comp_data['my_price']
         comp = comp_data['competitor_price']
+        
         if comp > 0:
             diff_pct = ((my - comp) / comp) * 100
             diffs.append(diff_pct)
+            
+            # Categorize significant differences
+            pname = agent.inventory.df_inv[agent.inventory.df_inv['product_id'] == pid]['product_name'].values[0]
+            if diff_pct > 5: # We are > 5% more expensive
+                losing_items.append(f"{pname} (+{diff_pct:.1f}%)")
+            elif diff_pct < -5: # We are > 5% cheaper
+                winning_items.append(f"{pname} ({diff_pct:.1f}%)")
     
     avg_diff = sum(diffs) / len(diffs) if diffs else 0
     
@@ -123,6 +131,19 @@ with col3:
     
     delta_val = f"{avg_diff:+.1f}% Price Gap"
     st.metric(label="Competitor Pressure", value=pressure, delta=delta_val, delta_color="inverse")
+    
+    # Detailed Expanders
+    if losing_items:
+        with st.expander("🚨 Losing Price War (Overpriced)", expanded=False):
+            st.caption("We are significantly more expensive than market.")
+            for item in losing_items[:5]: # Show top 5
+                st.write(f"• {item}")
+                
+    if winning_items:
+        with st.expander("✅ Winning (Underpriced)", expanded=False):
+            st.caption("We are beating the market price.")
+            for item in winning_items[:5]: # Show top 5
+                st.write(f"• {item}")
 
 st.divider()
 
@@ -238,3 +259,14 @@ with col_right:
 # --- 3. RAW DATA (For Credibility) ---
 with st.expander("📊 View Live Data Feeds"):
     st.dataframe(pd.read_csv("inventory.csv"))
+
+# --- 4. AUDIT TRAIL (Compliance) ---
+st.divider()
+st.subheader("📜 Audit & Compliance Log")
+st.markdown("Every AI decision is hashed and logged for traceability.")
+
+logs = agent.audit.get_recent_logs()
+if not logs.empty:
+    st.dataframe(logs, use_container_width=True)
+else:
+    st.info("No audit logs available yet. Generate a strategy to create records.")
