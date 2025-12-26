@@ -6,6 +6,15 @@ __pycache__/
 # C extensions
 *.so
 
+venv/
+__pycache__/
+.env
+.streamlit/
+.cache/
+*.log
+*.csv (large ones)
+
+
 # Distribution / packaging
 .Python
 build/
