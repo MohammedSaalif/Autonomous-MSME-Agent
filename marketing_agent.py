@@ -1,9 +1,15 @@
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from agents import FinanceAgent, InventoryAgent, CompetitorAgent, AuditAgent
 
 # ⚠️ PASTE YOUR KEY HERE
-API_KEY = "#" 
+API_KEY = os.getenv("GEMINI_API_KEY")
+if not API_KEY:
+    raise ValueError("GEMINI_API_KEY not found in environment variables. Please set it in .env file.")
 genai.configure(api_key=API_KEY)
 
 class MarketingAgent:
