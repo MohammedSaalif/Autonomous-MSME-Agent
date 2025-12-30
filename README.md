@@ -1,6 +1,8 @@
 # 🚀 Autonomous Marketing Agent for MSMEs
 
 > **Intelligence-Driven Decisions, Not Just Ads.**
+> **Empowering MSMEs to survive uncertainty and scale confidently through autonomous, intelligence-driven decision-making.**
+
 
 A powerful AI-driven dashboard designed to help Micro, Small, and Medium Enterprises (MSMEs) make smarter marketing decisions. Instead of blindly running ads, this agent analyzes your **Finance, Inventory, and Competitor** data to recommend the *right* strategy—whether it's launching a campaign, clearing dead stock, or holding cash during a crisis.
 
